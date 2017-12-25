@@ -10,7 +10,6 @@ let ttl = TimeSpan.FromMinutes(2.)
 let cache, cacheDirectory = createInternetFileCache "playerHistory" ttl
 
 let loadPlayerHistory (id:int) =
-    printf "Cache not hit"
     let playerHistoryUrl = (sprintf "https://fantasy.premierleague.com/drf/element-summary/%i" id)
     let playerHistory = PlayerHistory.Load playerHistoryUrl
     cache.Set ((string id), (string playerHistory))

@@ -6,7 +6,7 @@ open FSharp.Data.Runtime.Caching
 
 type PlayerHistory = JsonProvider<"../data-files/player-data.json">
 
-let ttl = TimeSpan.FromMinutes(2.)
+let ttl = TimeSpan.FromMinutes(5.)
 let cache, cacheDirectory = createInternetFileCache "playerHistory" ttl
 
 let loadPlayerHistory (id:int) =
